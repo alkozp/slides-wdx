@@ -11,3 +11,7 @@ jobs:
         run: |
           echo first line
           echo second line
+      - uses: mgwalker/action-htmlproofer@v1
+        with:
+          path: "_pages"
+          args: "--disable-external --allow-missing-href"
