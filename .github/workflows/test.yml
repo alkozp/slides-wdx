@@ -1,3 +1,8 @@
-- uses: anishathalye/proof-html@v2
-  with:
-    directory: .
+name: test workflow
+on: workflow_dispatch
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print to console
+        run: echo its my test 
