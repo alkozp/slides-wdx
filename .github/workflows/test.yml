@@ -7,3 +7,7 @@ jobs:
     steps:
       - name: print to console
         run: echo its my test 
+      - name: print few lines
+        run: |
+          echo first line
+          echo second line
