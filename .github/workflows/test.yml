@@ -2,12 +2,18 @@ name: test workflow
 on: workflow_dispatch
 
 jobs:
-  print:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: HTML5Validator
-        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
         with:
-          root: .
-          blacklist: invalid
+          ruby-version: 2.7.x
+
+      - uses: anishathalye/proof-html@v2
+        with:
+          directory: .
+          enforce_https: false
+          tokens: |
+            {"https://github.com": "${{ secrets.GITHUB_TOKEN }}"}
 
